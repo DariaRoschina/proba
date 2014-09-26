@@ -4,7 +4,7 @@
 
 using namespace std;
 using namespace Demo;
-string s;
+
 int
 main(int argc, char* argv[])
 {
@@ -17,9 +17,8 @@ main(int argc, char* argv[])
         if (!printer)
             throw "Invalid proxy";
 
-       // printer->printString("!");
-s=printer->getString();
-cout << s;
+        // printer->printString("!");
+        cout << printer->getString() << endl;
     } catch (const Ice::Exception& ex) {
         cerr << ex << endl;
         status = 1;
