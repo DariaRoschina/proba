@@ -27,10 +27,10 @@ client.cpp: Printer.h
 Server.cpp: Printer.h 
 
 server: Server.o Printer.o 
-	$(LD) $^ -Wl,-rpath=$(ICE_LIB) -L$(ICE_LIB) -lIce -lIceUtil -o $@
+	$(LD) $^ -Wl,-rpath=$(ICE_LIB) -L$(ICE_LIB) -lIce -lIceUtil -lpthread -o $@
 
 client: client.o Printer.o 
-	$(LD) $^ -Wl,-rpath=$(ICE_LIB) -L$(ICE_LIB) -lIce -lIceUtil -o $@
+	$(LD) $^ -Wl,-rpath=$(ICE_LIB) -L$(ICE_LIB) -lIce -lIceUtil -lpthread -o $@
 
 clean:
 	$(RMRF) $(OBJS) *~ server client Printer.h Printer.cpp */*~
