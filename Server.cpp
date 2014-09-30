@@ -7,8 +7,10 @@ using namespace Demo;
 class PrinterI : public Printer {
 public:
     virtual string getString(const Ice::Current&);
+    virtual  int getSum(const int& a,const int& b, const Ice::Current&);
 };
 //const string& s, const Ice::Current&
+//const int& a,const int& b,
 string
 PrinterI::
 getString(const Ice::Current&)
@@ -17,6 +19,12 @@ getString(const Ice::Current&)
 string s="hello";
 return s;
     //cout << s << endl;
+}
+int PrinterI:: getSum(const int& a,const int& b,const Ice::Current&)
+{
+int sum = a + b;
+//cout<<sum<<endl;
+return sum;
 }
 int
 main(int argc, char* argv[])
