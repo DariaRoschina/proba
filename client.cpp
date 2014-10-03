@@ -4,12 +4,11 @@
 
 using namespace std;
 using namespace Demo;
-int a;
-int b;
-int
+
 main(int argc, char* argv[])
 {
-   
+    int a;
+    int b;
     int status = 0;
     Ice::CommunicatorPtr ic;
     try {
@@ -26,9 +25,9 @@ main(int argc, char* argv[])
        cout << "Введите а и в:" << endl;
        cin>> a;
        cin>> b;
-       printer->getSum(a,b);
+      // printer->getSum(a,b);
+        cout<<printer->getSum(a,b)<<endl;
 
-        cout<<printer->getSum()<<endl;
     } catch (const Ice::Exception& ex) {
         cerr << ex << endl;
         status = 1;
